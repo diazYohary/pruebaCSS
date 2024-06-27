@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Desplegable</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: sans-serif;
+    }
+
+    header {
+      background-color: #f0f0f0;
+      padding: 10px;
+    }
+
+    nav {
+      text-align: center;
+    }
+
+    /* Estilos para el botón del menú */
+    #menuButton {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Estilos para el menú principal */
+    #menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: none; /* Oculto por defecto */
+    }
+
+    #menu li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    #menu a {
+      text-decoration: none;
+      color: black;
+    }
+
+    /* Estilos para el submenu */
+    .submenu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute; /* Posicionamiento relativo */
+      display: none; /* Oculto por defecto */
+    }
+
+    .submenu li {
+      margin-top: 10px;
+    }
+
+    .submenu a {
+      color: gray;
+    }
+
+    /* Estilos al hover para el menú principal */
+    #menu li:hover {
+      background-color: #eee;
+    }
+
+    /* Estilos al hover para mostrar el submenu */
+    #menu li:hover .submenu {
+      display: block; /* Mostrar el submenu */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mi Sitio Web</h1>
+    <nav>
+      <button id="menuButton">Menú</button>
+      <ul id="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li>
+          <a href="#">Productos</a>
+          <ul class="submenu">
+            <li><a href="#">Categoría 1</a></li>
+            <li><a href="#">Categoría 2</a></li>
+            <li><a href="#">Categoría 3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const menu = document.getElementById('menu');
+
+    menuButton.addEventListener('click', () => {
+      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>
